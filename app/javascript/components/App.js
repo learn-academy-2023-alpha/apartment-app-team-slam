@@ -29,7 +29,6 @@ const App = ({
       <BrowserRouter>
         <Header/>
         <Routes>
-        
           <Route path="/" element={<Home/>} /> 
           <Route path="/apartmentedit" element={<ApartmentEdit/>} /> 
           <Route path="/apartmentnew" element={<ApartmentNew/>} /> 

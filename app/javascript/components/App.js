@@ -10,11 +10,11 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 
 const App = (props) => {
-  console.log("logged_in:", logged_in);
-  console.log("current_user:", current_user);
-  console.log("new_user_route:", new_user_route);
-  console.log("sign_in_route:", sign_in_route);
-  console.log("sign_out_route:", sign_out_route);
+  console.log("logged_in:", props.logged_in);
+  console.log("current_user:", props.current_user);
+  console.log("new_user_route:", props.new_user_route);
+  console.log("sign_in_route:", props.sign_in_route);
+  console.log("sign_out_route:", props.sign_out_route);
   return (
     <>
       <BrowserRouter>

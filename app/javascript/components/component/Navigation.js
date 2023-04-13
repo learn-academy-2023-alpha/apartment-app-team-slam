@@ -27,7 +27,7 @@ const Navigation = ({
   return (
     <>
       <Navbar>
-        <NavbarBrand to="/">Apartments</NavbarBrand>
+        <NavbarBrand to="/">SLAMpartments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>

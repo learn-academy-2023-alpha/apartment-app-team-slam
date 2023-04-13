@@ -59,9 +59,6 @@ describe("<ApartmentIndex />", () => {
   it("displays a listing of apartments from the database", () => {
     screen.logTestingPlaygroundURL();
     expect(
-      container.querySelector(
-        "#sandbox > div > div > div:nth-child(1) > div > button"
-      )
-    ).toBeInTheDocument;
+       screen.getByText(/this 3 bedroom, 2 bath apartment is begging to get slammed/i).toBeInTheDocument);
   });
 });

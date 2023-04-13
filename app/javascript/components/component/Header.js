@@ -1,10 +1,12 @@
-import React from 'react'
-import Navigation from './Navigation'
+import React from "react";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <div><Navigation/></div>
-  )
-}
+    <div>
+      <Navigation {...props} />
+    </div>
+  );
+};
 
-export default Header
+export default Header;

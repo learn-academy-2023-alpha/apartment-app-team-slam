@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -12,40 +12,57 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
-} from 'reactstrap';
+} from "reactstrap";
 
+const Navigation = ({
+  logged_in,
+  current_user,
+  new_user_route,
+  sign_in_route,
+  sign_out_route,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-
-
-const Navigation = () => {
-const [isOpen, setIsOpen] = useState(false);
-
-const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <>
-    <Navbar >
-        <NavbarBrand href="/">Apartments</NavbarBrand>
+      <Navbar>
+        <NavbarBrand to="/">Apartments</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Listings</NavLink>
+              <NavLink to="/components/apartmentindex">Listings</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="/components/">Sign In</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/">Sign Out</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/components/">My Apartments</NavLink>
-            </NavItem>
-            </Nav>
+            {!logged_in && (
+              <>
+                <NavItem>
+                  <a href={sign_in_route}>Sign In</a>
+                </NavItem>
+                <NavItem>
+                  <a href={new_user_route}>Create an Account</a>
+                </NavItem>
+              </>
+            )}
+
+            {logged_in && (
+              <>
+                <NavItem>
+                  <a href={sign_out_route}>Sign Out</a>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/components/myapartments">My Apartments</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/components/apartmentnew">Add a listing</NavLink>
+                </NavItem>
+              </>
+            )}
+          </Nav>
         </Collapse>
       </Navbar>
-    
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

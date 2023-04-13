@@ -1,4 +1,7 @@
 import React from 'react'
+import './Home.css'
+
+
 
 const Home = () => {
   return (
@@ -6,7 +9,6 @@ const Home = () => {
 
     <h1>Welcome to SLAM Apartments</h1>
     <p>Find your Apartment</p>
-
     </>
   )
 }

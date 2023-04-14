@@ -7,7 +7,7 @@ import {
   CardText,
   Button,
 } from "reactstrap";
-import NavLink from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const ApartmentIndex = ({ apartments }) => {
   return (

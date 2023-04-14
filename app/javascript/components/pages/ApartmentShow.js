@@ -1,11 +1,22 @@
 import React from 'react'
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardSubtitle,
+  CardText,
+  Button,
+} from "reactstrap";
+import {NavLink, useParams} from "react-router-dom";
 
 const ApartmentShow = ({apartments}) => {
   let {id}=useParams()
   const currentApartment=apartments?.find((apartment) => apartment.id === +id)
 
   return (
-    
+    <>
+    <h2>Listing Info: </h2>
+    {currentApartment &&
     <Card
              className="show-card"
               style={{
@@ -14,7 +25,7 @@ const ApartmentShow = ({apartments}) => {
             >
               <img alt="Sample" src={currentApartment.image} />
               <CardBody>
-                <CardTitle tag="h5">{apartment.address}</CardTitle>
+                <CardTitle tag="h5">{apartments.address}</CardTitle>
                 <CardSubtitle className="mb-2 text-muted" tag="h6">
                   {currentApartment.city}, {currentApartment.state}
                 </CardSubtitle>
@@ -22,10 +33,11 @@ const ApartmentShow = ({apartments}) => {
                   {`This ${currentApartment.bedrooms} bedroom, ${currentApartment.bathrooms} bath apartment is BEGGING to get SLAMMED`}
                 </CardText>
                 <Button>
-                  <NavLink to={`/apartmentshow/${currentApartment.id}`}>Show More Info</NavLink></Button>
+                  <NavLink to={`/apartmentindex/`}>Back to listings</NavLink></Button>
               </CardBody>
             </Card>
-  )
+            }
+            </>)
 }
 
 export default ApartmentShow

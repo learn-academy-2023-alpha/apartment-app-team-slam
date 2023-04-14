@@ -7,6 +7,7 @@ import {
   CardText,
   Button,
 } from "reactstrap";
+import {NavLink} from "react-router-dom";
 
 const ApartmentIndex = ({ apartments }) => {
   return (
@@ -30,7 +31,9 @@ const ApartmentIndex = ({ apartments }) => {
                 <CardText>
                   {`This ${apartment.bedrooms} bedroom, ${apartment.bathrooms} bath apartment is BEGGING to get SLAMMED`}
                 </CardText>
-                <Button>Show More Info</Button>
+                <Button>
+                  <NavLink to={`/apartmentshow/${apartment.id}`}>Show More Info</NavLink>
+                </Button>
               </CardBody>
             </Card>
           );

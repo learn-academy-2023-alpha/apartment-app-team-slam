@@ -6,13 +6,13 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 const Navigation = ({
   logged_in,
@@ -32,7 +32,7 @@ const Navigation = ({
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink to="/components/apartmentindex">Listings</NavLink>
+              <NavLink to="/apartmentindex">Listings</NavLink>
             </NavItem>
             {!logged_in && (
               <>

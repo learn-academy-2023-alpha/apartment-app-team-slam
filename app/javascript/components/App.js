@@ -8,6 +8,7 @@ import ApartmentShow from "./pages/ApartmentShow";
 import NotFound from "./pages/NotFound";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import MyApartments from "./pages/ProtectedIndex";
 
 const App = (props) => {
   // console log our current props
@@ -41,6 +42,15 @@ const App = (props) => {
           <Route
             path="/apartmentindex"
             element={<ApartmentIndex apartments={apartments} />}
+          />
+          <Route
+            path="/myapartments"
+            element={
+              <ProtectedIndex
+                apartments={apartments}
+                current_user={current_user}
+              />
+            }
           />
           <Route path="*" element={<NotFound />} />
         </Routes>

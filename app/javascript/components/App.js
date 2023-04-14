@@ -8,7 +8,7 @@ import ApartmentShow from "./pages/ApartmentShow";
 import NotFound from "./pages/NotFound";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
-import MyApartments from "./pages/ProtectedIndex";
+import ProtectedIndex from "./pages/ProtectedIndex";
 
 const App = (props) => {
   // console log our current props
@@ -16,6 +16,8 @@ const App = (props) => {
 
   // set up state to hold apartment data in
   const [apartments, setApartments] = useState([]);
+
+
 
   // upon page load, run the load apartments function to load apartments from database into state
   useEffect(() => {
@@ -44,11 +46,11 @@ const App = (props) => {
             element={<ApartmentIndex apartments={apartments} />}
           />
           <Route
-            path="/myapartments"
+            path="/protectedindex"
             element={
               <ProtectedIndex
                 apartments={apartments}
-                current_user={current_user}
+                current_user={props.current_user}
               />
             }
           />

@@ -1,17 +1,28 @@
 import React from "react";
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardSubtitle,
+  CardText,
+  Button,
+} from "reactstrap";
+
 
 const ProtectedIndex = ({ apartments, current_user }) => {
   // read from apartments and filter for all apartments that match the current_user id
 
-  const myapartments = apartments?.filter(
+  const myApartments = apartments?.filter(
     (apartment) => current_user.id === apartment.user_id
   );
 
   return (
     <>
+    
       <h2>My Listings</h2>
+      {myApartments && ( 
       <div className="index-listing">
-        {myApartments.map((apartment, index) => {
+        {myApartments?.map((apartment, index) => {
           return (
             <Card
               key={index}
@@ -34,8 +45,10 @@ const ProtectedIndex = ({ apartments, current_user }) => {
           );
         })}
       </div>
+)}
     </>
-  );
+ )    
+  
 };
 
-export default MyApartments;
+export default ProtectedIndex;

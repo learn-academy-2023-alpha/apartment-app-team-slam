@@ -15,3 +15,18 @@ body{
   height: 40px;
   letter-spacing: .2rem;
 }
+
+
+// Apartments Index
+.index-listing{
+  border: 1px dashed;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: #4a8046;
+    background-color: #033342;
+}

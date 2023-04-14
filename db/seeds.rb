@@ -29,7 +29,7 @@ user1_apartment = [{
 }
 ] 
 
-user1_apartment = [{
+user2_apartment = [{
     bathrooms: 1.5,
     address: '123 forth st.',
     city: 'AAron',
@@ -40,7 +40,7 @@ user1_apartment = [{
     pets: true,
     square_footage: 200,
     image: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-}
+},
 
 {
     bathrooms: 2,
